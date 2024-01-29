@@ -58,7 +58,7 @@ public class GameLoop {
         ctx.clearRect(0, 0, width, height);
         for(Spaceship spaceship : spaceships) {
             ctx.setFill(Color.BLUE);
-            ctx.fillOval(spaceship.x() % width -5, spaceship.y() % height -5, 10, 10);
+            ctx.fillOval(Math.floorMod((int) (spaceship.x()-5), (int) width), Math.floorMod((int) (spaceship.y()-5), (int) height), 10, 10);
         }
     }
 }
